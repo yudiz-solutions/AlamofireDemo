@@ -1,0 +1,9 @@
+AlamofireDemo.xcodeproj/project.xcworkspace
+AlamofireDemo.xcodeproj/xcuserdata
+lamofireDemo.xcworkspace/xcuserdata
+AlamofireDemo.xcworkspace
+AlamofireDemo.xcworkspace/contents.xcworkspacedata
+Pods
+*.DS_Store
+.DS_Store
+Podfile.lock
