@@ -48,8 +48,7 @@ class KPWebCall:NSObject{
     let manager: SessionManager
     var networkManager: NetworkReachabilityManager
     var headers: HTTPHeaders = [
-        "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/x-www-form-urlencoded"
     ]
     
     var paramEncode: ParameterEncoding = URLEncoding.default
@@ -60,7 +59,7 @@ class KPWebCall:NSObject{
     override init() {
         manager = Alamofire.SessionManager.default
         networkManager = NetworkReachabilityManager()!
-        paramEncode = JSONEncoding.default
+//        paramEncode = JSONEncoding.default
         
         // Will be called on success of web service calls.
         successBlock = { (relativePath, res, respObj, block) -> Void in
@@ -91,12 +90,7 @@ class KPWebCall:NSObject{
                         jprint(items: "Error(\(relativePath)): \(errorDict!)")
                         block(errorDict!, response.statusCode)
                         if response.statusCode == 423{
-//                            let nav = _appDelegator.window?.rootViewController as! KPNavigationViewController
-//                            let pre = nav.presentedViewController
-//                            pre?.dismissViewControllerAnimated(false, completion: nil)
-//                            nav.popToRootViewControllerAnimated(true)
-//                            _appDelegator.prepareToSignOut()
-//                            ValidationToast.showStatusMessage(kTokenExpire,yCord: 20)
+
                         }
                     } else {
                         let code = response.statusCode
@@ -165,7 +159,7 @@ extension KPWebCall{
 
 // MARK: - Request, ImageUpload and Dowanload methods
 extension KPWebCall{
-    func getRequest(relPath: String, param: [String: AnyObject]?, block: @escaping WSBlock)-> DataRequest?{
+    func getRequest(relPath: String, param: [String: Any]?, block: @escaping WSBlock)-> DataRequest?{
         do{
             return manager.request(try getFullUrl(relPath: relPath), method: HTTPMethod.get, parameters: param, encoding: paramEncode, headers: headers).responseJSON { (resObj) in
                 switch resObj.result{
@@ -193,7 +187,7 @@ extension KPWebCall{
         }
     }
     
-    func postRequest(relPath: String, param: [String: AnyObject]?, block: @escaping WSBlock)-> DataRequest?{
+    func postRequest(relPath: String, param: [String: Any]?, block: @escaping WSBlock)-> DataRequest?{
         do{
             return manager.request(try getFullUrl(relPath: relPath), method: HTTPMethod.post, parameters: param, encoding: paramEncode, headers: headers).responseJSON { (resObj) in
                 switch resObj.result{
