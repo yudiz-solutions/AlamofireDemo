@@ -59,7 +59,6 @@ class KPWebCall:NSObject{
     override init() {
         manager = Alamofire.SessionManager.default
         networkManager = NetworkReachabilityManager()!
-        paramEncode = URLEncoding.default
         
         // Will be called on success of web service calls.
         successBlock = { (relativePath, res, respObj, block) -> Void in
@@ -146,14 +145,6 @@ extension KPWebCall{
     
     func removeAccessTokenFromHeader(){
         manager.adapter = nil
-    }
-    
-    func setClientToken(token: String){
-        headers["clientToken"] = token
-    }
-    
-    func removeClientToken(){
-        headers.removeValue(forKey: "clientToken")
     }
 }
 
@@ -261,7 +252,7 @@ extension KPWebCall{
         }
     }
     
-    func dowanloadFile(relPath : String, progress: WSProgress?, block: @escaping WSFileBlock){
+    func dowanloadFile(relPath : String, saveFileWithName: String, progress: WSProgress?, block: @escaping WSFileBlock){
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             let fileURL = documentsURL.appendingPathComponent("pig.png")
