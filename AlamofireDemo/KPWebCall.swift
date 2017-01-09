@@ -37,7 +37,7 @@ class AccessTokenAdapter: RequestAdapter {
 }
 
 let _baseUrl = "http://www.json-generator.com/api/"
-typealias WSBlock = (_ json: AnyObject?, _ flag: Int) -> ()
+typealias WSBlock = (_ json: Any?, _ flag: Int) -> ()
 typealias WSProgress = (Progress) -> ()?
 typealias WSFileBlock = (_ path: String?, _ success: Bool) -> ()
 
@@ -59,7 +59,7 @@ class KPWebCall:NSObject{
     override init() {
         manager = Alamofire.SessionManager.default
         networkManager = NetworkReachabilityManager()!
-//        paramEncode = JSONEncoding.default
+        paramEncode = URLEncoding.default
         
         // Will be called on success of web service calls.
         successBlock = { (relativePath, res, respObj, block) -> Void in
