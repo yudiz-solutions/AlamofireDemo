@@ -1,19 +1,19 @@
-# KPWebCall Demo with Alamofire
-Minimal coding for API calls using alamofier, `KPWebCall` Allow user to create it's API call method and return response in block.
+# YZWebCall Demo with Alamofire
+Minimal coding for API calls using alamofier, `YZWebCall` Allow user to create it's API call method and return response in block.
 
 ## Useges
-+ Install `Alamofier` via pod and add `KPWebCall.swift` file in your project.
++ Install `Alamofier` via pod and add `YZWebCall.swift` file in your project.
 
-+ if your base url if fixed then set it to `_baseUrl` in `KPWebCall`
++ if your base url if fixed then set it to `_baseUrl` in `YZWebCall`
 ```
 let _baseUrl = // Your base path
 ```
 
-+ First you want to create your own api method under ApiCall extention. in this you need to add your relative path, request param if needed, and pass `WSBlock` in method argument for hundle respose. `KPWebCall` provide methods like `getRequest`, `postRequest`, and `uploadImage` for multipart request.
++ First you want to create your own api method under ApiCall extention. in this you need to add your relative path, request param if needed, and pass `WSBlock` in method argument for hundle respose. `YZWebCall` provide methods like `getRequest`, `postRequest`, and `uploadImage` for multipart request.
 
 ```
 // MARK: - API Call extention
-extension KPWebCall{
+extension YZWebCall{
     // Demo 
     func simpleGetApiCall(block: @escaping WSBlock){
         let relPath = // Your api relative path
@@ -31,17 +31,17 @@ extension KPWebCall{
 
 + Now you can call your api form anywhere in your project and get respose in it's own block
 ```
-KPWebCall.call.simpleGetApiCall { (json, statusCode) in
+YZWebCall.call.simpleGetApiCall { (json, statusCode) in
   // Your code
   // josn is responce data
   // statusCode is http responce status code.
 }
 ```
 
-+ Also you can dowanload file with `KPWebCall` in simplest way, you need to create one more method for dowanload file, simple as api call.
++ Also you can dowanload file with `YZWebCall` in simplest way, you need to create one more method for dowanload file, simple as api call.
 ```
 // MARK: - API Call extention
-extension KPWebCall{
+extension YZWebCall{
   // api call 1
   // api call 2
 
@@ -54,7 +54,7 @@ extension KPWebCall{
 
 + Now you can call `dowanlodFileCall` method from your any controller and get dowanload progeress block and dowanload completion block with dowanloaded image path
 ```
-KPWebCall.call.dowanlodFileCall(progressBlock: { (progress) -> ()? in
+YZWebCall.call.dowanlodFileCall(progressBlock: { (progress) -> ()? in
     // progress of dowanload
 }) { (path, isComplete) in
     // completion or failur. with dowanloade file path
@@ -63,7 +63,7 @@ KPWebCall.call.dowanlodFileCall(progressBlock: { (progress) -> ()? in
 
 ## Other API Usages
 
-+ `KPWebCall.swift` allow you make your webcall simple and esier. set your http header in `headers` in 'KPWebCall' file. also it allow to set parameter encoding like. (Josn, xml), default set to urlencoding.
++ `YZWebCall.swift` allow you make your webcall simple and esier. set your http header in `headers` in 'YZWebCall' file. also it allow to set parameter encoding like. (Josn, xml), default set to urlencoding.
 ```
 var headers: HTTPHeaders = [
   "Content-Type": "application/x-www-form-urlencoded"
@@ -71,14 +71,14 @@ var headers: HTTPHeaders = [
 var paramEncode: ParameterEncoding = URLEncoding.default
 ```
 
-+ `KPWebCall` has one more important method to set `Authorization` in http header. it accept tokern in string argument.
++ `YZWebCall` has one more important method to set `Authorization` in http header. it accept tokern in string argument.
 ```
-KPWebCall.call.setAccesTokenToHeader(token: "")
+YZWebCall.call.setAccesTokenToHeader(token: "")
 ```
 
 + Remove `Authorization` from http header
 ```
-KPWebCall.call.removeAccessTokenFromHeader()
+YZWebCall.call.removeAccessTokenFromHeader()
 ```
 
 + It Also provied reachability block for internet. it called when internet seems to be down or avalable. you can hundel no internet event in following code.
@@ -97,6 +97,6 @@ func addInterNetListner(){
 
 + If you want to check fot internet at any point then it also provide one mothod for check internet status in boolen.
 ```
-let isAvail = KPWebCall.call.isInternetAvailable()
+let isAvail = YZWebCall.call.isInternetAvailable()
 ```
 
