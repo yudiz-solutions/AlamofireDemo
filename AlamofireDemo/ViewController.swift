@@ -14,7 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         KPWebCall.call.simpleGetApiCall { (json, statusCode) in
-            jprint(items: json)
+            if json != nil {
+                jprint(items: json!)
+            } else {
+                jprint(items: "Json nil")
+            }
         }
         
         // Do any additional setup after loading the view, typically from a nib.

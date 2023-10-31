@@ -65,7 +65,7 @@ class KPWebCall:NSObject{
             // Check for response it should be there as it had come in success block
             if let response = res{
                 jprint(items: "Response Code: \(response.statusCode)")
-                jprint(items: "Response(\(relativePath)): \(respObj)")
+                jprint(items: "Response(\(relativePath)): \(String(describing: respObj))")
                 if response.statusCode == 200 {
                     block(respObj, response.statusCode)
                 } else {
@@ -210,7 +210,7 @@ extension KPWebCall{
     func uploadImage(relPath: String,img: UIImage,param: [String: String]?, block: @escaping WSBlock, progress: WSProgress?){
         do{
             manager.upload(multipartFormData: { (formData) in
-                formData.append(UIImageJPEGRepresentation(img, 1.0)!, withName: "keyName", fileName: "image.jpeg", mimeType: "image/jpeg")
+                formData.append(img.jpegData(compressionQuality: 1.0)!, withName: "keyName", fileName: "image.jpeg", mimeType: "image/jpeg")
                 if let _ = param{
                     for (key, value) in param!{
                         formData.append(value.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: key)
