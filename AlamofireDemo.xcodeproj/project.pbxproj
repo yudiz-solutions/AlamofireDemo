@@ -13,7 +13,7 @@
 		03C499E01E01717E003E75F6 /* AlamofireDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C499DE1E01717E003E75F6 /* AlamofireDemo.xcdatamodeld */; };
 		03C499E21E01717E003E75F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C499E11E01717E003E75F6 /* Assets.xcassets */; };
 		03C499E51E01717E003E75F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C499E31E01717E003E75F6 /* LaunchScreen.storyboard */; };
-		03C499ED1E0171E9003E75F6 /* KPWebCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C499EC1E0171E9003E75F6 /* KPWebCall.swift */; };
+		03C499ED1E0171E9003E75F6 /* YZWebCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C499EC1E0171E9003E75F6 /* YZWebCall.swift */; };
 		5932EA6592AF55756BAE4744 /* Pods_AlamofireDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE218B2F506CF8A56D45746 /* Pods_AlamofireDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		03C499E11E01717E003E75F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03C499E41E01717E003E75F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03C499E61E01717E003E75F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03C499EC1E0171E9003E75F6 /* KPWebCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWebCall.swift; sourceTree = "<group>"; };
+		03C499EC1E0171E9003E75F6 /* YZWebCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZWebCall.swift; sourceTree = "<group>"; };
 		03CBCE10413D073F4145C827 /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE218B2F506CF8A56D45746 /* Pods_AlamofireDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97119B026C20C222ABF3EFA /* Pods-AlamofireDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		03C499D61E01717E003E75F6 /* AlamofireDemo */ = {
 			isa = PBXGroup;
 			children = (
-				03C499EC1E0171E9003E75F6 /* KPWebCall.swift */,
+				03C499EC1E0171E9003E75F6 /* YZWebCall.swift */,
 				03C499D71E01717E003E75F6 /* AppDelegate.swift */,
 				03C499D91E01717E003E75F6 /* ViewController.swift */,
 				03C499DB1E01717E003E75F6 /* Main.storyboard */,
@@ -212,7 +212,7 @@
 				03C499E01E01717E003E75F6 /* AlamofireDemo.xcdatamodeld in Sources */,
 				03C499DA1E01717E003E75F6 /* ViewController.swift in Sources */,
 				03C499D81E01717E003E75F6 /* AppDelegate.swift in Sources */,
-				03C499ED1E0171E9003E75F6 /* KPWebCall.swift in Sources */,
+				03C499ED1E0171E9003E75F6 /* YZWebCall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

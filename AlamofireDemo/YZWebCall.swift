@@ -1,5 +1,5 @@
 //
-//  KPWebCalls.swift
+//  YZWebCalls.swift
 //  AlmofireDemo
 //
 //  Created by Yudiz on 12/12/16.
@@ -41,9 +41,9 @@ typealias WSBlock = (_ json: Any?, _ flag: Int) -> ()
 typealias WSProgress = (Progress) -> ()?
 typealias WSFileBlock = (_ path: String?, _ success: Bool) -> ()
 
-class KPWebCall:NSObject{
+class YZWebCall:NSObject{
 
-    static var call: KPWebCall = KPWebCall()
+    static var call: YZWebCall = YZWebCall()
     
     let manager: SessionManager
     var networkManager: NetworkReachabilityManager
@@ -126,7 +126,7 @@ class KPWebCall:NSObject{
 }
 
 // MARK: Other methods
-extension KPWebCall{
+extension YZWebCall{
     func getFullUrl(relPath : String) throws -> URL{
         do{
             if relPath.lowercased().contains("http") || relPath.lowercased().contains("www"){
@@ -149,7 +149,7 @@ extension KPWebCall{
 }
 
 // MARK: - Request, ImageUpload and Dowanload methods
-extension KPWebCall{
+extension YZWebCall{
     func getRequest(relPath: String, param: [String: Any]?, block: @escaping WSBlock)-> DataRequest?{
         do{
             return manager.request(try getFullUrl(relPath: relPath), method: HTTPMethod.get, parameters: param, encoding: paramEncode, headers: headers).responseJSON { (resObj) in
@@ -278,7 +278,7 @@ extension KPWebCall{
 
 
 // MARK: - Internet Availability
-extension KPWebCall{
+extension YZWebCall{
     func addInterNetListner(){
         networkManager.listener = { (status) in
             if status == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable{
@@ -300,7 +300,7 @@ extension KPWebCall{
 }
 
 // MARK: - API Call extention
-extension KPWebCall{
+extension YZWebCall{
     
     func simpleGetApiCall(block: @escaping WSBlock){
         let relPath = "json/get/cdTiCPExGq?indent=2"

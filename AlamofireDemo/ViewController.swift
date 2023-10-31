@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KPWebCall.call.simpleGetApiCall { (json, statusCode) in
+        YZWebCall.call.simpleGetApiCall { (json, statusCode) in
             if json != nil {
                 jprint(items: json!)
             } else {
