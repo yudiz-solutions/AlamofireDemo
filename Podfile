@@ -6,7 +6,7 @@ target 'AlamofireDemo' do
   use_frameworks!
 
   # Pods for AlamofireDemo
-pod 'Alamofire', '~> 4.0'
+pod 'Alamofire', '~> 5.8.1'
 
 end
 
