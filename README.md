@@ -99,4 +99,3 @@ func addInterNetListner(){
 ```
 let isAvail = YZWebCall.call.isInternetAvailable()
 ```
-
